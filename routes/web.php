@@ -18,3 +18,5 @@ Route::get('hello', function() {
     return 'Hello World';
 });
 
+Route::resource('artists', 'ArtistController');
+
