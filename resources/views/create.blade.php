@@ -15,7 +15,7 @@
     </style>
     <div class="card uper">
         <div class="card-header">
-            Add Shows
+            Add Artists
         </div>
         <div class="card-body">
             @if ($errors->any())
@@ -27,25 +27,28 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('shows.store') }}">
+            <form method="post" action="{{ route('artists.store') }}">
                 <div class="form-group">
                     @csrf
-                    <label for="name">Show Name:</label>
-                    <input type="text" class="form-control" name="show_name"/>
+                    <label for="name">First Name :</label>
+                    <input type="text" class="form-control" name="first_name"/>
                 </div>
+
                 <div class="form-group">
-                    <label for="price">Show Genre :</label>
+                    @csrf
+                    <label for="name">Last Name :</label>
+                    <input type="text" class="form-control" name="last_name"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Artist Genre :</label>
                     <input type="text" class="form-control" name="genre"/>
                 </div>
                 <div class="form-group">
-                    <label for="price">Show Rating :</label>
+                    <label for="price">Artist Rating :</label>
                     <input type="text" class="form-control" name="rating"/>
                 </div>
-                <div class="form-group">
-                    <label for="quantity">Show Lead Actor :</label>
-                    <input type="text" class="form-control" name="lead_actor"/>
-                </div>
-                <button type="submit" class="btn btn-primary">Create Show</button>
+                <button type="submit" class="btn btn-primary">Add Artist</button>
             </form>
         </div>
     </div>
