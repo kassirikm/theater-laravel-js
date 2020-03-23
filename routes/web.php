@@ -20,3 +20,11 @@ Route::get('hello', function() {
 
 Route::resource('artists', 'ArtistController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
