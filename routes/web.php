@@ -20,6 +20,7 @@ Route::get('hello', function() {
 
 Route::resource('artists', 'ArtistController');
 
+Route::resource('shows', 'ShowController');
 
 Auth::routes();
 
