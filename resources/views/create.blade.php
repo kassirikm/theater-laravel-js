@@ -1,4 +1,3 @@
-<?php
 /**
  * Created by PhpStorm.
  * User: McFly
@@ -39,8 +38,8 @@
                     <input type="text" class="form-control" name="genre"/>
                 </div>
                 <div class="form-group">
-                    <label for="price">Show IMDB Rating :</label>
-                    <input type="text" class="form-control" name="imdb_rating"/>
+                    <label for="price">Show Rating :</label>
+                    <input type="text" class="form-control" name="rating"/>
                 </div>
                 <div class="form-group">
                     <label for="quantity">Show Lead Actor :</label>
