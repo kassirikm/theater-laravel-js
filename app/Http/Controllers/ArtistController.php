@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+/* Import the Show model */
+use App\Artist;
 
 class ArtistController extends Controller
 {
@@ -34,7 +36,13 @@ class ArtistController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+        ]);
+        $artist = Artist::create($validatedData);
+
+        return redirect('/artists')->with('success', 'Artist is successfully saved');
     }
 
     /**
@@ -43,7 +51,7 @@ class ArtistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function artist($id)
     {
         //
     }

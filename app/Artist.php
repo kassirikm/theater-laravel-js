@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artist extends Model
 {
-    protected $fillable = ['firstname', 'lastname'];
+    protected $fillable = ['first_name', 'last_name'];
 }

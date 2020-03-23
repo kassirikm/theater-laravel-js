@@ -39,15 +39,6 @@
                     <label for="name">Last Name :</label>
                     <input type="text" class="form-control" name="last_name"/>
                 </div>
-
-                <div class="form-group">
-                    <label for="price">Artist Genre :</label>
-                    <input type="text" class="form-control" name="genre"/>
-                </div>
-                <div class="form-group">
-                    <label for="price">Artist Rating :</label>
-                    <input type="text" class="form-control" name="rating"/>
-                </div>
                 <button type="submit" class="btn btn-primary">Add Artist</button>
             </form>
         </div>
