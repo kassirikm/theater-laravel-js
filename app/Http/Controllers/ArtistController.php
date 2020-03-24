@@ -42,6 +42,7 @@ class ArtistController extends Controller
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
         ]);
+
         $artist = Artist::create($validatedData);
 
         return redirect('/artists')->with('success', 'Artist is successfully saved');
@@ -64,9 +65,12 @@ class ArtistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit($id)
     {
-        //
+        $artist = Artist::findOrFail($id);
+
+        return view('edit', compact('artist'));
     }
 
     /**
@@ -78,7 +82,13 @@ class ArtistController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'first_name' => 'required|max:255',
+            'last_name' => 'required|max:255',
+        ]);
+        Artist::whereId($id)->update($validatedData);
+
+        return redirect('/artists')->with('success', 'Artist is successfully updated');
     }
 
     /**
