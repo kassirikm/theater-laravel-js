@@ -25,7 +25,8 @@
                 <td>ID</td>
                 <td>First Name</td>
                 <td>Last Name</td>
-                <td colspan="2">Action</td>
+                <td>Action</td>
+                <td><a href="{{ route('artists.create')}}" class="btn btn-success">Add</a></td>
             </tr>
             </thead>
             <tbody>
