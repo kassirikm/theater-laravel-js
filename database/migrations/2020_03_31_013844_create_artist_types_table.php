@@ -13,7 +13,7 @@ class CreateArtistTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('artist__types', function (Blueprint $table) {
+        Schema::create('artist_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
             $table->integer('artist_id');
@@ -28,6 +28,6 @@ class CreateArtistTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('artist__types');
+        Schema::dropIfExists('artist_types');
     }
 }
