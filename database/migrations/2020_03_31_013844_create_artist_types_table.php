@@ -16,8 +16,19 @@ class CreateArtistTypesTable extends Migration
         Schema::create('artist_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('artist_id');
-            $table->integer('type_id');
+            $table->bigInteger('artist_id')->unsigned();
+            $table->bigInteger('type_id')->unsigned();
+        });
+
+        Schema::table('artist_types',function(Blueprint $table)
+        {
+            $table->foreign('artist_id')->references('id')
+                ->on('artists')
+                ->onDelete('cascade');
+
+            $table->foreign('type_id')->references('id')
+                ->on('types')
+                ->onDelete('cascade');
         });
     }
 
