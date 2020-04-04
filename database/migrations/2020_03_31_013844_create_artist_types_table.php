@@ -16,17 +16,25 @@ class CreateArtistTypesTable extends Migration
         Schema::create('artist_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->bigInteger('artist_id')->unsigned();
-            $table->bigInteger('type_id')->unsigned();
+            /*
+            -  foreign key columns need to be unsigned or the migrations will not work
+               this is because, by default, the id is unsigned
+            -  Because the keyword big is used for the id
+               big should be used as foreign keys type for the same reason
+            */
+            $table->UnsignedBigInteger('artist_id');
+            $table->UnsignedBigInteger('type_id');
         });
 
         Schema::table('artist_types',function(Blueprint $table)
         {
-            $table->foreign('artist_id')->references('id')
+            $table->foreign('artist_id')
+                ->references('id')
                 ->on('artists')
                 ->onDelete('cascade');
 
-            $table->foreign('type_id')->references('id')
+            $table->foreign('type_id')
+                ->references('id')
                 ->on('types')
                 ->onDelete('cascade');
         });
