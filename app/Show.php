@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Show extends Model
 {
-    protected $fillable = ['show_name', 'genre', 'rating', 'lead_actor'];
+    protected $fillable = ['slug', 'title', 'poster_url', 'location_id', 'bookable', 'price'];
+
+    public function representations()
+    {
+        return $this->hasMany('App\Representation');
+    }
 }

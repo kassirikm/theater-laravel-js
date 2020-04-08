@@ -15,11 +15,19 @@ class CreateShowsTable extends Migration
     {
         Schema::create('shows', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('show_name');
-            $table->string('genre');
-            $table->float('rating');
-            $table->string('lead_actor');
             $table->timestamps();
+            $table->string('slug');
+            $table->string('title');
+            $table->string('poster_url');
+            $table->tinyInteger('bookable');
+            $table->decimal('price');
+        });
+
+        Schema::table('shows',function (Blueprint $table){
+            $table  ->unsignedBigInteger('location_id');
+            $table  ->foreign('location_id')
+                    ->references('id')->on('locations')
+                    ->onDelete('cascade');
         });
     }
 
