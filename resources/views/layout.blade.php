@@ -1,3 +1,4 @@
+<!--
 /**
  * Created by PhpStorm.
  * User: McFly
@@ -7,6 +8,7 @@
 
 /* Main template file
    All the other view files will extend this layout.blade.php file. */
+-->
 
 <!DOCTYPE html>
 <html lang="en">
