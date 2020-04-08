@@ -16,4 +16,9 @@ class Artist_Type extends Model
     {
         return $this->belongsTo('App\Artist');
     }
+
+    public function artiste_type_show()
+    {
+        return $this->hasMany('App\Artiste_Type_Shows');
+    }
 }
