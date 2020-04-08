@@ -38,9 +38,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function role()
+    public function roles()
     {
         return $this->hasMany('App\Role');
+    }
+
+    public function representation_users()
+    {
+        return $this->hasMany('App\Representation_User');
     }
 }
 

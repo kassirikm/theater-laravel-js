@@ -12,4 +12,9 @@ class Representation extends Model
     {
         return $this->belongsTo('App\Show');
     }
+
+    public function representation_users()
+    {
+        return $this->hasMany('App\Representation_User');
+    }
 }
