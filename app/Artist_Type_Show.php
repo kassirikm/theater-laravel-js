@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Artiste_Type_Show extends Model
+class Artist_Type_Show extends Model
 {
     public function artist_type()
     {
