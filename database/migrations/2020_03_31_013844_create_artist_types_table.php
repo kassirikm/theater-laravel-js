@@ -29,13 +29,11 @@ class CreateArtistTypesTable extends Migration
         Schema::table('artist_types',function(Blueprint $table)
         {
             $table->foreign('artist_id')
-                ->references('id')
-                ->on('artists')
+                ->references('id')->on('artists')
                 ->onDelete('cascade');
 
             $table->foreign('type_id')
-                ->references('id')
-                ->on('types')
+                ->references('id')->on('types')
                 ->onDelete('cascade');
         });
     }
