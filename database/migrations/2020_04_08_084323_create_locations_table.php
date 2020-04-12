@@ -20,8 +20,8 @@ class CreateLocationsTable extends Migration
             $table->string('slug');
             $table->string('designation');
             $table->string('address');
-            $table->tinyInteger('website');
-            $table->decimal('phone');
+            $table->string('website');
+            $table->string('phone');
         });
 
         //Foreign key
