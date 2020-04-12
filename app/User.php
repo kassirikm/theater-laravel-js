@@ -49,12 +49,16 @@ class User extends Authenticatable
     }
 }
 
-/*
+
 class User extends Model
 {
+    protected $fillable = [
+        'login','password','email','firstname', 'lastname','langue'
+       ];
+
     public function role()
     {
         return $this->hasMany('App\Role');
     }
 }
-*/
+
