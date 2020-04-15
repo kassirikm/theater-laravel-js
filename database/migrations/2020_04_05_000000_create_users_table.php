@@ -28,11 +28,11 @@ class CreateUsersTable extends Migration
         });
 
         Schema::table('users', function (Blueprint $table) {
-            $table->UnsignedBigInteger('role_id');
+            $table->UnsignedBigInteger('role_id')->nullable();
             $table->foreign('role_id')
                 ->references('id')
                 ->on('roles')
-                ->onDelete('cascade');
+                ->onDelete('set null');
         });
     }
 

@@ -49,7 +49,7 @@ class User extends Authenticatable
     }
 }
 
-
+/*
 class User extends Model
 {
     protected $fillable = [
@@ -60,5 +60,5 @@ class User extends Model
     {
         return $this->hasMany('App\Role');
     }
-}
+}*/
 
