@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+/*
+
+ Command: php artisan make:controller ShowController --resource
+ The " -- resource " extension add by default 6 methods inside the controller.
+ */
 class ShowController extends Controller
 {
     /**
@@ -11,6 +16,7 @@ class ShowController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //

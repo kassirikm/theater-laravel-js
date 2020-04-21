@@ -20,6 +20,10 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
     </head>
     <body>
+        <div class="container">
+            @yield('content')
+        </div>
+        <script src="{{ asset('js/app.js') }}" type="text/js"></script>
         @include('includes.navbar')
         <div class="jumbotron">
             <h1>Jumbotron</h1>
