@@ -13,7 +13,7 @@ class LocationsTableSeeder extends Seeder
     {
         DB::table('locations')->insert([
             'locality_id' => 4,
-            'slug' => 'test',
+            'slug' => 'test1',
             'designation' => 'Théâtre royal du Parc',
             'address' => 'Rue de la Loi 3',
             'website' => 'http://www.theatreduparc.be/',
@@ -22,7 +22,7 @@ class LocationsTableSeeder extends Seeder
 
         DB::table('locations')->insert([
             'locality_id' => 1,
-            'slug' => 'test',
+            'slug' => 'test2',
             'designation' => 'Wolubilis',
             'address' => 'Cours Paul-Henri Spaak 1',
             'website' => 'https://www.wolubilis.be/',
@@ -31,7 +31,7 @@ class LocationsTableSeeder extends Seeder
 
         DB::table('locations')->insert([
             'locality_id' => 3,
-            'slug' => 'test',
+            'slug' => 'test3',
             'designation' => 'TTO Théâtre',
             'address' => '396 - 398 Galeries de la Toison d\'Or',
             'website' => 'http://www.ttotheatre.com/',

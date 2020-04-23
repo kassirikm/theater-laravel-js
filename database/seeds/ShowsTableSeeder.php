@@ -12,7 +12,7 @@ class ShowsTableSeeder extends Seeder
     public function run()
     {
         DB::table('shows')->insert([
-            'slug' => 'test',
+            'slug' => 'test1',
             'title' => 'Dom Juan',
             'poster_url' => 'test',
             'bookable' => 1,
@@ -21,7 +21,7 @@ class ShowsTableSeeder extends Seeder
         ]);
 
         DB::table('shows')->insert([
-            'slug' => 'test',
+            'slug' => 'test2',
             'title' => 'Le Malade imaginaire',
             'poster_url' => 'test',
             'bookable' => 0,
@@ -30,7 +30,7 @@ class ShowsTableSeeder extends Seeder
         ]);
 
         DB::table('shows')->insert([
-            'slug' => 'test',
+            'slug' => 'test3',
             'title' => 'Les Femmes savantes',
             'poster_url' => 'test',
             'bookable' => 1,

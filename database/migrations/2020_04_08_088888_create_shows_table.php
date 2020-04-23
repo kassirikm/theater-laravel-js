@@ -16,7 +16,8 @@ class CreateShowsTable extends Migration
         Schema::create('shows', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('slug');
+            // Add unicity constraint
+            $table->string('slug',60)->unique();
             $table->string('title');
             $table->string('poster_url');
             $table->tinyInteger('bookable');
@@ -25,7 +26,7 @@ class CreateShowsTable extends Migration
 
         Schema::table('shows',function (Blueprint $table){
             $table  ->unsignedBigInteger('location_id');
-            $table  ->foreign('location_id')
+            $table  ->foreign('location_id')->nullable()
                     ->references('id')->on('locations')
                     ->onDelete('cascade');
         });
