@@ -19,7 +19,8 @@ class ShowController extends Controller
 
     public function index()
     {
-        //
+        $shows = Show::all();
+        return view('index', compact('shows'));
     }
 
     /**
