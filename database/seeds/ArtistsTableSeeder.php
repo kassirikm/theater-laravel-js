@@ -15,9 +15,20 @@ class ArtistsTableSeeder extends Seeder
              
         //Define data
        $artists = [
-            ['firstname'=>'Bob','lastname'=>'Sull'],
-            ['firstname'=>'Marc','lastname'=>'Flynn'],
-            ['firstname'=>'Fred','lastname'=>'Durand'],
+            ['firstname'=>'Daniel','lastname'=>'Marcelin'],
+            ['firstname'=>'Philippe','lastname'=>'Laurent'],
+            ['firstname'=>'Marius','lastname'=>'Von Mayenburg'],
+            ['firstname'=>'Olivier','lastname'=>'Boudon'],
+            ['firstname'=>'Anne Marie','lastname'=>'Loop'],
+            ['firstname'=>'Pietro','lastname'=>'Varasso'],
+            ['firstname'=>'Laurent','lastname'=>'Caron'],
+            ['firstname'=>'Élena','lastname'=>'Perez'],
+            ['firstname'=>'Guillaume','lastname'=>'Alexandre'],
+            ['firstname'=>'Claude','lastname'=>'Semal'],
+            ['firstname'=>'Laurence','lastname'=>'Warin'],
+            ['firstname'=>'Pierre','lastname'=>'Wayburn'],
+            ['firstname'=>'Gwendoline','lastname'=>'Gauthier'],
+            ['firstname'=>'Philippe','lastname'=>'Laurent'],           
         ];
         
         //Insert data in the table
