@@ -1,13 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: McFly
- * Date: 4/21/2020
- * Time: 11:10 PM
- */
 
 @extends('layout')
-
 @section('content')
     <style>
         .uper {

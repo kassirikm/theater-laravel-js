@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+/* Import the Show model */
+use App\Show;
 
 /*
 
@@ -20,7 +22,7 @@ class ShowController extends Controller
     public function index()
     {
         $shows = Show::all();
-        return view('index', compact('shows'));
+        return view('show/index', compact('shows'));
     }
 
     /**
@@ -30,7 +32,7 @@ class ShowController extends Controller
      */
     public function create()
     {
-        return view('createShows');
+        return view('show/create');
     }
 
     /**
