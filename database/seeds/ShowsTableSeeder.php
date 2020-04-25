@@ -62,7 +62,6 @@ class ShowsTableSeeder extends Seeder
                 'price' => $data['price'],
             ]);
         }
-
-
+       
     }
 }

@@ -17,7 +17,7 @@ class ArtistController extends Controller
     {
         $artists = Artist::all();
 
-        return view('index',compact('artists'));
+        return view('artist/index',compact('artists'));
     }
 
     /**
@@ -27,7 +27,7 @@ class ArtistController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('artist/create');
     }
 
     /**
@@ -70,7 +70,7 @@ class ArtistController extends Controller
     {
         $artist = Artist::findOrFail($id);
 
-        return view('edit', compact('artist'));
+        return view('artist/edit', compact('artist'));
     }
 
     /**

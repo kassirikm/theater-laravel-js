@@ -65,6 +65,5 @@ class LocationsTableSeeder extends Seeder
             ]);
         }
 
-
     }
 }

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Representation;
-use Carbon\Carbon;
+/* Import the Show model */
+use App\Show;
 
 
 /*
@@ -22,7 +22,8 @@ class ShowController extends Controller
 
     public function index()
     {
-        //
+        $shows = Show::all();
+        return view('show/index', compact('shows'));
     }
 
     /**
@@ -32,7 +33,7 @@ class ShowController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('show/create');
     }
 
     /**
