@@ -1,8 +1,13 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
+use App\Locality;
+
 
 class LocalitiesTableSeeder extends Seeder
+
 {
     /**
      * Run the database seeds.
@@ -29,6 +34,11 @@ class LocalitiesTableSeeder extends Seeder
         DB::table('localities')->insert([
             'postal_code' => '1000',
             'locality' => 'Bruxelles',
+        ]);
+        
+        DB::table('localities')->insert([
+            'postal_code' => '1170',
+            'locality' => 'Watermael-Boitsfort',
         ]);
     }
 }

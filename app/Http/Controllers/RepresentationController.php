@@ -7,19 +7,13 @@ use App\Representation;
 use Carbon\Carbon;
 
 
-/*
-
- Command: php artisan make:controller ShowController --resource
- The " -- resource " extension add by default 6 methods inside the controller.
- */
-class ShowController extends Controller
+class RepresentationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
         //
@@ -32,7 +26,7 @@ class ShowController extends Controller
      */
     public function create()
     {
-        return view('create');
+        //
     }
 
     /**
@@ -54,7 +48,15 @@ class ShowController extends Controller
      */
     public function show($id)
     {
-        //
+        $representation = Representation::find($id);
+        $date = Carbon::parse($representation->when)->format('d/m/Y');
+        $heure = Carbon::parse($representation->when)->format('G:i');
+        
+        return view('representation.show',[
+            'representation' => $representation,
+            'date' => $date,
+            'heure' => $heure,
+        ]);
     }
 
     /**

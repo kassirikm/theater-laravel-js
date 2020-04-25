@@ -13,6 +13,6 @@ class Location extends Model
      */
     public function localities()
     {
-        return $this->belongsTo('App\Locality');
+        return $this->belongsTo('App\Locality', 'locality_id');
     }
 }

@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artist extends Model
 {
-    protected $fillable = ['first_name', 'last_name'];
+    protected $fillable = ['firstname', 'lastname'];
 
-    public function artist_types()
+      public function types()
     {
-        return $this->hasMany('App\Artist_type');
+        return $this->belongsToMany('App\Type');
     }
+
 
 }

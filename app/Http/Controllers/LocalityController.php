@@ -3,23 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Representation;
-use Carbon\Carbon;
+use App\Locality;
 
-
-/*
-
- Command: php artisan make:controller ShowController --resource
- The " -- resource " extension add by default 6 methods inside the controller.
- */
-class ShowController extends Controller
+class LocalityController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
         //
@@ -32,7 +24,7 @@ class ShowController extends Controller
      */
     public function create()
     {
-        return view('create');
+        //
     }
 
     /**
@@ -54,7 +46,11 @@ class ShowController extends Controller
      */
     public function show($id)
     {
-        //
+        $locality = Locality::find($id);
+
+        return view('locality.show', [
+            'locality' => $locality,
+        ]);
     }
 
     /**

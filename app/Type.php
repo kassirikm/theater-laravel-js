@@ -8,8 +8,9 @@ class Type extends Model
 {
     protected $fillable = ['type'];
 
-    public function artist_types()
+    public function artists()
     {
-        return $this->hasMany('App\Artist_type');
+        return $this->belongsToMany('App\Artist');
     }
+
 }

@@ -15,13 +15,13 @@ class CreateLocationsTable extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->UnsignedBigInteger('locality_id');
+            $table->UnsignedBigInteger('locality_id')->nullable();
             $table->timestamps();
-            $table->string('slug');
-            $table->string('designation');
-            $table->string('address');
-            $table->string('website');
-            $table->string('phone');
+            $table->string('slug', 60);
+            $table->string('designation', 60);
+            $table->string('address', 255)->nullable();
+            $table->string('website', 255)->nullable();
+            $table->string('phone', 30)->nullable();
         });
 
         //Foreign key

@@ -15,20 +15,22 @@ class CreateShowsTable extends Migration
     {
         Schema::create('shows', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
-            $table->string('slug');
-            $table->string('title');
-            $table->string('poster_url');
-            $table->tinyInteger('bookable');
-            $table->decimal('price');
-        });
+            $table->UnsignedBigInteger('location_id')->nullable();
+            $table->string('slug', 60)->unique();
+            $table->string('title', 255);
+            $table->string('poster_url', 255)->nullable();
+            $table->tinyInteger('bookable')->default(false);
+            $table->decimal('price', 10, 2)->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+            
+            $table->foreign('location_id')->references('id')->on('locations')
+                    ->onDelete('restrict')->onUpdate('cascade');
+            
+            
 
-        Schema::table('shows',function (Blueprint $table){
-            $table  ->unsignedBigInteger('location_id');
-            $table  ->foreign('location_id')
-                    ->references('id')->on('locations')
-                    ->onDelete('cascade');
         });
+     
     }
 
     /**

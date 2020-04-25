@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+use App\Location;
+use App\Locality;
+
 
 class LocationsTableSeeder extends Seeder
 {
@@ -11,31 +15,56 @@ class LocationsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('locations')->insert([
-            'locality_id' => 4,
-            'slug' => 'test',
-            'designation' => 'Théâtre royal du Parc',
-            'address' => 'Rue de la Loi 3',
-            'website' => 'http://www.theatreduparc.be/',
-            'phone' => '025053030',
-        ]);
+       //Define data
+        $locations = [
+            [
+                'slug'=>null,
+                'designation'=>'Espace Delvaux / La Vénerie',
+                'address'=>'3 rue Gratès',
+                'locality_postal_code'=>'1170',
+                'website'=>'https://www.lavenerie.be',
+                'phone'=>'+32 (0)2/663.85.50',
+            ],
+            [
+                'slug'=>null,
+                'designation'=>'Dexia Art Center',
+                'address'=>'50 rue de l\'Ecuyer',
+                'locality_postal_code'=>'1000',
+                'website'=>null,
+                'phone'=>null,
+            ],
+            [
+                'slug'=>null,
+                'designation'=>'La Samaritaine',
+                'address'=>'16 rue de la samaritaine',
+                'locality_postal_code'=>'1000',
+                'website'=>'http://www.lasamaritaine.be/',
+                'phone'=>null,
+            ],
+            [
+                'slug'=>null,
+                'designation'=>'Espace Magh',
+                'address'=>'17 rue du Poinçon',
+                'locality_postal_code'=>'1000',
+                'website'=>'http://www.espacemagh.be',
+                'phone'=>'+32 (0)2/274.05.10',
+            ],
+        ];
+        
+                //Insert data in the table
+        foreach ($locations as $data) {
+            $locality = Locality::firstWhere('postal_code',$data['locality_postal_code']);
+            
+            DB::table('locations')->insert([
+                'slug' => Str::slug($data['designation'],'-'),
+                'designation' => $data['designation'],
+                'address' => $data['address'],
+                'locality_id' => $locality->id,	//Référence à la table localities
+                'website' => $data['website'],
+                'phone' => $data['phone'],
+            ]);
+        }
 
-        DB::table('locations')->insert([
-            'locality_id' => 1,
-            'slug' => 'test',
-            'designation' => 'Wolubilis',
-            'address' => 'Cours Paul-Henri Spaak 1',
-            'website' => 'https://www.wolubilis.be/',
-            'phone' => '027616030',
-        ]);
 
-        DB::table('locations')->insert([
-            'locality_id' => 3,
-            'slug' => 'test',
-            'designation' => 'TTO Théâtre',
-            'address' => '396 - 398 Galeries de la Toison d\'Or',
-            'website' => 'http://www.ttotheatre.com/',
-            'phone' => '025100510',
-        ]);
     }
 }

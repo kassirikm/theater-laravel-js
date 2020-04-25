@@ -4,28 +4,27 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRepresentationsTable extends Migration
+class CreateArtistTypeTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+       public function up()
     {
-        Schema::create('representations', function (Blueprint $table){
+        Schema::create('artist_type', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('location_id')->nullable();
-            $table->unsignedBigInteger('show_id');
-            $table->datetime('when');
+            $table->unsignedBigInteger('artist_id');
+            $table->unsignedBigInteger('type_id');
             
-            $table->foreign('location_id')->references('id')->on('locations')
+            $table->foreign('artist_id')->references('id')->on('artists')
                     ->onDelete('restrict')->onUpdate('cascade');
-            $table->foreign('show_id')->references('id')->on('shows')
+            $table->foreign('type_id')->references('id')->on('types')
                     ->onDelete('restrict')->onUpdate('cascade');
-
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -34,6 +33,6 @@ class CreateRepresentationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('representations');
+        Schema::dropIfExists('artist_type');
     }
 }
