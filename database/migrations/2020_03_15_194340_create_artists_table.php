@@ -23,8 +23,8 @@ class CreateArtistsTable extends Migration
         Schema::create('artists', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('firstname');
-            $table->string('lastname');
+            $table->string('firstname', 60);
+            $table->string('lastname', 60);
         });
     }
 

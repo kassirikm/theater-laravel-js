@@ -16,8 +16,8 @@ class CreateLocalitiesTable extends Migration
         Schema::create('localities', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('postal_code')->unique();
-            $table->string('locality')->unique();
+            $table->string('postal_code', 6)->unique();
+            $table->string('locality', 60)->unique();
         });
     }
 
