@@ -6,7 +6,7 @@ use App\Type;
 use App\ArtistType;
 use App\Show;
 
-class ArtistTypeShowShowTableSeeder extends Seeder
+class ArtistTypeShowsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
