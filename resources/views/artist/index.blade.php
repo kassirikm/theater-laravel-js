@@ -35,8 +35,8 @@
             @foreach($artists as $artist)
                 <tr>
                     <td>{{$artist->id}}</td>
-                    <td>{{$artist->first_name}}</td>
-                    <td>{{$artist->last_name}}</td>
+                    <td>{{$artist->firstname}}</td>
+                    <td>{{$artist->lastname}}</td>
                     <td><a href="{{ route('artists.edit', $artist->id)}}" class="btn btn-primary">Edit</a></td>
                     <td>
                         <form action="{{ route('artists.destroy', $artist->id)}}" method="post">

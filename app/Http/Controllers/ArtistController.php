@@ -39,8 +39,8 @@ class ArtistController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
         ]);
 
         $artist = Artist::create($validatedData);
@@ -83,8 +83,8 @@ class ArtistController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
+            'firstname' => 'required|max:255',
+            'lastname' => 'required|max:255',
         ]);
         Artist::whereId($id)->update($validatedData);
 
