@@ -41,3 +41,8 @@ Route::get('/locality/{id}', 'LocalityController@show');
 Route::get('representation/{id}', 'RepresentationController@show');
 
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

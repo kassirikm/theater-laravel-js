@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends \TCG\Voyager\Models\User
 {
     use Notifiable;
 
@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'login','password','email','firstname', 'lastname','langue',
+        'login','password','email','firstname', 'lastname','langue', 'role_id',
     ];
 
     /**
@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->hasMany('App\Role');
+        return $this->belongsTo('App\Role');
     }
 
     public function representation_users()

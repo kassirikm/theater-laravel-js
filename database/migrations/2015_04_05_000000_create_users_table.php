@@ -21,13 +21,13 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('langue',2);
+            $table->string('langue',2)->default('EN');
             $table->rememberToken();
             $table->timestamps();
 
         });
 
-        Schema::table('users', function (Blueprint $table) {
+         Schema::table('users', function (Blueprint $table) {
             $table->UnsignedBigInteger('role_id')->nullable();
             $table->foreign('role_id')
                 ->references('id')
