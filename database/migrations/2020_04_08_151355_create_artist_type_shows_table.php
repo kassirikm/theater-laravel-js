@@ -23,12 +23,14 @@ class CreateArtistTypeShowsTable extends Migration
             $table->unsignedBigInteger('artist_type_id');
             $table  ->foreign('artist_type_id')
                     ->references('id')->on('artist_type')
-                    ->onDelete('cascade');
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
 
             $table ->unsignedBigInteger('show_id');
             $table  ->foreign('show_id')
                     ->references('id')->on('shows')
-                    ->onDelete('cascade');
+                    ->onDelete('resrict')
+                    ->onUpdate('cascade');
         });
     }
 

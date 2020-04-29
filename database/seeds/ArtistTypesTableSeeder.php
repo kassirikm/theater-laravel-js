@@ -71,7 +71,7 @@ class ArtistTypesTableSeeder extends Seeder
                 'artist_lastname'=>'Perez',
                 'type'=>'comédien',
             ],
-                        [
+            [
                 'artist_firstname'=>'Guillaume',
                 'artist_lastname'=>'Alexandre',
                 'type'=>'comédien',

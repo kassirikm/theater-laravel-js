@@ -30,7 +30,8 @@ class CreateLocationsTable extends Migration
             $table->foreign('locality_id')
                 ->references('id')
                 ->on('localities')
-                ->onDelete('cascade');
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
