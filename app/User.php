@@ -43,9 +43,9 @@ class User extends \TCG\Voyager\Models\User
         return $this->belongsTo('App\Role');
     }
 
-    public function representation_users()
+    public function representation()
     {
-        return $this->hasMany('App\Representation_User');
+        return $this->belongsToMany('App\Representation');
     }
 }
 

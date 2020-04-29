@@ -24,12 +24,14 @@ class CreateRepresentationUsersTable extends Migration
             $table  ->unsignedBigInteger('representation_id');
             $table  ->foreign('representation_id')
                     ->references('id')->on('representations')
-                    ->onDelete('cascade');
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
 
             $table  ->unsignedBigInteger('user_id');
             $table  ->foreign('user_id')
                     ->references('id')->on('users')
-                    ->onDelete('cascade');
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
         });
     }
 

@@ -13,9 +13,9 @@ class Representation extends Model
         return $this->belongsTo('App\Show');
     }
 
-    public function representation_users()
+    public function users()
     {
-        return $this->hasMany('App\Representation_User');
+        return $this->belongsToMany('App\User');
     }
     
     public function locations()
