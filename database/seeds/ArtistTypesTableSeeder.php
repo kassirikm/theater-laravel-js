@@ -123,7 +123,7 @@ class ArtistTypesTableSeeder extends Seeder
                         ['firstname', '=', $data['artist_firstname']],
                         ['lastname', '=', $data['artist_lastname']]
                     ])->first();
-            $type = Type::firstWhere('type', $data['type']);
+                $type = Type::firstWhere('type', $data['type']);
 
             DB::table('artist_type')->insert([
                 'artist_id' => $artist->id,
