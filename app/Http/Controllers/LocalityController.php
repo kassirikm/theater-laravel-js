@@ -8,6 +8,21 @@ use App\Locality;
 class LocalityController extends Controller
 {
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $locality = Locality::find($id);
+
+        return view('locality.show', [
+            'locality' => $locality,
+        ]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -38,20 +53,7 @@ class LocalityController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $locality = Locality::find($id);
 
-        return view('locality.show', [
-            'locality' => $locality,
-        ]);
-    }
 
     /**
      * Show the form for editing the specified resource.
