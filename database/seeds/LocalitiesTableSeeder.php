@@ -16,6 +16,12 @@ class LocalitiesTableSeeder extends Seeder
      */
     public function run()
     {
+        //Empty the table first
+        //Only do this in dev mode, not in production mode (why?)
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        Locality::truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
         DB::table('localities')->insert([
             'postal_code' => '1200',
             'locality' => 'Woluwe-Saint-Lambert',

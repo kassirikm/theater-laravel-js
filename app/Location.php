@@ -8,6 +8,21 @@ class Location extends Model
 {
     protected $fillable =
         ['slug','designation','address','locality_id','website','phone'];
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'locations';
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
     /**
      * Get the locality that owns the location.
      */
