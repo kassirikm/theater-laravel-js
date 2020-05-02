@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use App\Locality;
+use App\Location;
 
-class LocalityController extends Controller
+
+class LocationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -46,10 +46,9 @@ class LocalityController extends Controller
      */
     public function show($id)
     {
-        $locality = Locality::find($id);
-
-        return view('locality.show', [
-            'locality' => $locality,
+        $location = Location::find($id);
+            return view('location.show',[
+                'location' => $location,
         ]);
     }
 
