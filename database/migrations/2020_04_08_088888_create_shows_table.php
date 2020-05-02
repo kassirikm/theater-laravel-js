@@ -18,6 +18,7 @@ class CreateShowsTable extends Migration
             $table->UnsignedBigInteger('location_id')->nullable();
             $table->string('slug', 60)->unique();
             $table->string('title', 255);
+            $table->text('description')->nullable();
             $table->string('poster_url', 255)->nullable();
             $table->tinyInteger('bookable')->default(false);
             $table->decimal('price', 10, 2)->nullable();
