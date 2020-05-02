@@ -22,8 +22,18 @@ class ShowController extends Controller
 
     public function index()
     {
+        /*
         $shows = Show::all();
         return view('show/index', compact('shows'));
+        */
+
+        $shows = Show::all();
+
+        return view('show.index',[
+            'shows' => $shows,
+            'resource' => 'spectacles',
+        ]);
+
     }
 
     /**
@@ -55,7 +65,11 @@ class ShowController extends Controller
      */
     public function show($id)
     {
-        //
+        $show = Show::find($id);
+
+        return view('show.show',[
+            'show' => $show,
+        ]);
     }
 
     /**
