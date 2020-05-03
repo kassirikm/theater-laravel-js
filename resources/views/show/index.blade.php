@@ -1,7 +1,18 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: McFly
- * Date: 4/24/2020
- * Time: 5:13 PM
- */
+@extends('layouts.app')
+
+@section('title', 'Liste des spectacles')
+
+@section('content')
+    <h1>Liste des {{ $resource }}</h1>
+
+    <ul>
+        @foreach($shows as $show)
+            <li>
+                {{ $show->title }}
+                @if($show->bookable)
+                    <span>{{ $show->price }} €</span>
+                @endif
+            </li>
+        @endforeach
+    </ul>
+@endsection

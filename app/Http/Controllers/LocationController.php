@@ -1,39 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-/* Import the Show model */
-use App\Show;
+use App\Location;
 
 
-/*
-
- Command: php artisan make:controller ShowController --resource
- The " -- resource " extension add by default 6 methods inside the controller.
- */
-class ShowController extends Controller
+class LocationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-        /*
-        $shows = Show::all();
-        return view('show/index', compact('shows'));
-        */
-
-        $shows = Show::all();
-
-        return view('show.index',[
-            'shows' => $shows,
-            'resource' => 'spectacles',
-        ]);
-
+        //
     }
 
     /**
@@ -43,7 +24,7 @@ class ShowController extends Controller
      */
     public function create()
     {
-        return view('show/create');
+        //
     }
 
     /**
@@ -65,10 +46,9 @@ class ShowController extends Controller
      */
     public function show($id)
     {
-        $show = Show::find($id);
-
-        return view('show.show',[
-            'show' => $show,
+        $location = Location::find($id);
+            return view('location.show',[
+                'location' => $location,
         ]);
     }
 
