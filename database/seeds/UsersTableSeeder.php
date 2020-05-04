@@ -59,5 +59,16 @@ class UsersTableSeeder extends Seeder
             'remember_token' => Str::random(60),
             'langue' => 'FR',
         ]);
+        // API user
+        DB::table('users')->insert([
+            'login' => 'API',
+            'firstname' => 'API',
+            'lastname' => 'API',
+            'email' => 'API@API.com',
+            'password' => Hash::make('apiapi'),
+            'remember_token' => Str::random(60),
+            'langue' => 'FR',
+            'role_id' => 3,
+        ]);
     }
 }
