@@ -35,6 +35,14 @@ class CreateUsersTable extends Migration
                 ->onDelete('set null')
                 ->onUpdate('cascade');
         });
+        
+        // API Authentication
+        Schema::table('users', function ($table) {
+            $table->string('api_token', 80)->after('password')
+                        ->unique()
+                        ->nullable()
+                        ->default(null);
+});
     }
 
     /**

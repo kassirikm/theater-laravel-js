@@ -15,15 +15,17 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Require user authentication to access api resources
+Route::middleware('auth:api')->group(function() {
+    Route::apiResource('representations', 'Api\RepresentationController');
+});
+
+Route::middleware('auth:api')->group(function() {
+    Route::apiResource('shows', 'Api\ShowsController');
+});
+
 /*
-Route::middleware('auth:api')->group(function() {
-    Route::apiResource('representations', 'RepresentationController');
-});
-
-Route::middleware('auth:api')->group(function() {
-    Route::apiResource('shows', 'ShowsController');
-});
-*/
 Route::namespace('Api')->group(function() {
     Route::apiResource('representations', 'RepresentationController');
 });
@@ -31,3 +33,4 @@ Route::namespace('Api')->group(function() {
 Route::namespace('Api')->group(function() {
     Route::apiResource('shows', 'ShowsController');
 });
+ */

@@ -68,6 +68,7 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('apiapi'),
             'remember_token' => Str::random(60),
             'langue' => 'FR',
+            'api_token' => Str::random(60),
             'role_id' => 3,
         ]);
     }
