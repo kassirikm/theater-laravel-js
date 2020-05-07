@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/testHome', function () {
+    return view('testHome');
+});
 /*
 Route::get('hello', function() {
     return 'Hello World';
@@ -24,6 +28,8 @@ Route::resource('artists', 'ArtistController');
 Route::resource('shows', 'ShowController');
 
 Auth::routes();
+
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
