@@ -93,8 +93,10 @@
                             <label for="langue" class="col-md-4 col-form-label text-md-right">{{ __('Langue') }}</label>
 
                             <div class="col-md-6">
-                                <input id="langue" type="text" class="form-control @error('langue') is-invalid @enderror" name="langue" value="{{ old('langue') }}" required autocomplete="langue" autofocus>
-
+                                <select id="langue" type="text" class="form-control @error('langue') is-invalid @enderror" name="langue" value="{{ old('langue') }}" required autocomplete="langue" autofocus>
+                                <option value="FR">FR</option>
+                                <option value="NL">NL</option>
+                                </select>
                                 @error('langue')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
