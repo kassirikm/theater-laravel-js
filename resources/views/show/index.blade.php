@@ -4,7 +4,6 @@
 
 @section('content')
     <h1>Liste des {{ $resource }}</h1>
-
     <ul>
         @foreach($shows as $show)
             <li>

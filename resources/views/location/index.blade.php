@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('title', 'Liste des lieux de spectacle')
@@ -7,9 +8,8 @@
     <ul>
         @foreach($locations as $location)
             <li>{{ $location->designation }}
-                @if($location->website)
-                    - <a href="{{ $location->website }}">{{ $location->website }}</a></li>
-            @endif
+            </li>
         @endforeach
     </ul>
+
 @endsection

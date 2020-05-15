@@ -31,8 +31,21 @@ class Location extends Model
         return $this->belongsTo('App\Locality', 'locality_id');
     }
 
+    /**
+     * Get the shows in this locations
+     */
     public function shows()
     {
         return $this->hadMany('App\Show');
     }
+
+    /**
+     * Get the representations in this location.
+     */
+    public function representations()
+    {
+        return $this->hasMany('App\Representation');
+    }
+
 }
+
