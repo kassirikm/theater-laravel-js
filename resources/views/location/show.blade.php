@@ -5,7 +5,7 @@
 @section('content')
     <article>
         <h1>{{ $location->designation }}</h1>
-            <p>{{ $location->address }}</p>
+        <address>
             <p>{{ $location->locality->postal_code}}
                 {{ $location->locality->locality }}</p>
 
