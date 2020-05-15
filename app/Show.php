@@ -27,12 +27,12 @@ class Show extends Model
      */
     public $timestamps = true;
 
-    public function representation()
+    public function representations()
     {
         return $this->hasMany('App\Representation');
     }
 
-    public function artist_type()
+    public function artist_types()
     {
         return $this->belongsToMany('App\ArtistType');
     }

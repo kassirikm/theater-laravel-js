@@ -8,6 +8,20 @@ class Representation extends Model
 {
     protected $fillable = ['show_id', 'when', 'location_id'];
 
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'representations';
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
     public function shows()
     {
         return $this->belongsTo('App\Show');
@@ -20,6 +34,6 @@ class Representation extends Model
     
     public function locations()
     {
-        return $this->belongsTo('App\Locations');
+        return $this->belongsTo('App\Location');
     }
 }
