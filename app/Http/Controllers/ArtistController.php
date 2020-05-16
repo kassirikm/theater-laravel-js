@@ -54,9 +54,13 @@ class ArtistController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function artist($id)
+    public function show($id)
     {
-        //
+        $artist = Artist::find($id);
+
+        return view('artist.show', [
+            'artist' => $artist,
+        ]);
     }
 
     /**
