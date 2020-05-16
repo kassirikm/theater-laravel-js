@@ -36,7 +36,7 @@ class Location extends Model
      */
     public function shows()
     {
-        return $this->hadMany('App\Show');
+        return $this->hasMany('App\Show');
     }
 
     /**

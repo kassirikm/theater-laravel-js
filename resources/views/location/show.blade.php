@@ -6,26 +6,28 @@
     <article>
         <h1>{{ $location->designation }}</h1>
         <address>
-            <p>{{ $location->locality->postal_code}}
-                {{ $location->locality->locality }}</p>
-
+            <p>{{ $location->address }}</p>
+            <p>{{ $location->localities->postal_code }} 
+               {{ $location->localities->locality }}
+            </p>
+            
             @if($location->website)
-                <p><a href="{{ $location->website }}" target="_blank">{{ $location->website }}</a></p>
+            <p><a href="{{ $location->website }}" target="_blank">{{ $location->website }}</a></p>
             @else
-                <p>Pas de site web</p>
+            <p>Pas de site web</p>
             @endif
-
+            
             @if($location->phone)
-                <p><a href="tel:{{ $location->phone }}">{{ $location->phone }}</a></p>
+            <p><a href="tel:{{ $location->phone }}">{{ $location->phone }}</a></p>
             @else
-                <p>Pas de téléphone</p>
+            <p>Pas de téléphone</p>
             @endif
         </address>
-
+        
         <h2>Liste des spectacles</h2>
         <ul>
-            @foreach($location->shows as $show)
-                <li>{{ $show->title }}</li>
-            @endforeach
+        @foreach($location->shows as $show)
+            <li>{{ $show->title }}</li>
+        @endforeach
         </ul>
 @endsection
