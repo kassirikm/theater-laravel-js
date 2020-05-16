@@ -25,6 +25,10 @@ Route::get('hello', function() {
 */
 Route::resource('artists', 'ArtistController');
 
+Route::resource('types', 'TypeController');
+
+// Route::resource('roles', 'RoleController');
+
 Route::resource('shows', 'ShowController');
 
 Auth::routes();

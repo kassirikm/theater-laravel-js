@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Type;
 
 class TypeController extends Controller
 {
@@ -13,7 +14,13 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        $types = Type::all();
+        
+        return view('type.index',[
+            'types' => $types,
+            'resource' => 'types',
+        ]);
+
     }
 
     /**
@@ -45,7 +52,11 @@ class TypeController extends Controller
      */
     public function show($id)
     {
-        //
+        $type = Type::find($id);
+        
+        return view('type.show',[
+            'type' => $type,
+        ]);
     }
 
     /**
