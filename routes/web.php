@@ -29,6 +29,8 @@ Route::resource('types', 'TypeController');
 
 // Route::resource('roles', 'RoleController');
 
+Route::resource('localities', 'LocalityController');
+
 Route::resource('shows', 'ShowController');
 
 Auth::routes();
@@ -46,8 +48,6 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/program', 'PagesController@program');
-Route::get('locality', 'LocalityController@index');
-Route::get('/locality/{id}', 'LocalityController@show');
 Route::get('location', 'LocationController@index');
 Route::get('location/{id}', 'LocationController@show');
 Route::get('representation/{id}', 'RepresentationController@show');
