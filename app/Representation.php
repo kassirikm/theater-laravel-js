@@ -22,7 +22,7 @@ class Representation extends Model
      */
     public $timestamps = false;
 
-    public function shows()
+    public function show()
     {
         return $this->belongsTo('App\Show');
     }
@@ -32,7 +32,7 @@ class Representation extends Model
         return $this->belongsToMany('App\User');
     }
     
-    public function locations()
+    public function location()
     {
         return $this->belongsTo('App\Location');
     }

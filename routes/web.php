@@ -35,6 +35,8 @@ Route::resource('locations', 'LocationController');
 
 Route::resource('shows', 'ShowController');
 
+Route::resource('representations', 'RepresentationController');
+
 Auth::routes();
 
 Auth::routes(['verify' => true]);
@@ -50,12 +52,7 @@ Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
 Route::get('/program', 'PagesController@program');
-Route::get('representation/{id}', 'RepresentationController@show');
-Route::get('show', 'ShowController@index');
-Route::get('show/{id}', 'ShowController@show');
-
-
-
+// Route::get('representation/{id}', 'RepresentationController@show');
 
 
 
