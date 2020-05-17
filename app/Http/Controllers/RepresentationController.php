@@ -16,15 +16,14 @@ class RepresentationController extends Controller
      */
     public function index()
     {
-        /*
+        
         $representation = Representation::all();
 
         return view('representation.index',[
             'representation' => $representation,
             'resource' => 'représentations',
         ]);
-         * 
-         */
+      
     }
 
     /**
