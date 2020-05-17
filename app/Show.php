@@ -34,7 +34,7 @@ class Show extends Model
 
     public function artistTypes()
     {
-        return $this->belongsTo('App\ArtistType');
+        return $this->belongsToMany('App\ArtistType', 'artist_type_shows');
     }
 
     
