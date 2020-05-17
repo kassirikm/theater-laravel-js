@@ -34,5 +34,16 @@
         @else
         <p>Aucune représentation</p>
         @endif
+        
+        <h2>Liste des artistes</h2>
+        <ul>
+            @foreach ($show->artistTypes as $collaborateur)
+                <li>
+                    {{ $collaborateur->artist->firstname }}
+                    {{ $collaborateur->artist->lastname }}
+                    ({{ $collaborateur->type->type }})
+                </li>              
+            @endforeach
+        </ul>
 
 @endsection

@@ -19,9 +19,9 @@ class CreateArtistTypeTable extends Migration
             $table->unsignedBigInteger('type_id');
 
             $table->foreign('artist_id')->references('id')->on('artists')
-                    ->onDelete('cascade')->onUpdate('cascade');
+                    ->onDelete('restrict')->onUpdate('cascade');
             $table->foreign('type_id')->references('id')->on('types')
-                    ->onDelete('cascade')->onUpdate('cascade');
+                    ->onDelete('restrict')->onUpdate('cascade');
         });
     }
 
