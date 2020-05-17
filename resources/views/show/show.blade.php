@@ -22,5 +22,17 @@
             <p><em>Réservable</em></p>
         @else
             <p><em>Non réservable</em></p>
-    @endif
+        @endif
+        
+        <h2>Liste des représentations</h2>
+        @if($show->representations->count()>=1)
+        <ul>
+            @foreach ($show->representations as $representation)
+                <li>{{ $representation->when }}</li>              
+            @endforeach
+        </ul>
+        @else
+        <p>Aucune représentation</p>
+        @endif
+
 @endsection
