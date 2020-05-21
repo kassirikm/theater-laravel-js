@@ -3,6 +3,9 @@
 @section('title', 'Liste des spectacles')
 
 @section('content')
+
+
+    <table id="show_id" class="display">
     <h1>Liste des {{ $resource }}</h1>
     <ul>
         @foreach($shows as $show)
@@ -23,4 +26,5 @@
             </li>
         @endforeach
     </ul>
+   </table>
 @endsection
