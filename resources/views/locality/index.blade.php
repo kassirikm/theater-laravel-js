@@ -9,8 +9,8 @@ $(document).ready( function () {
     //$('#show_id').DataTable();
     $('#locality_id').DataTable();
 } );
-?>
 */
+?>
 
 @section('content')
     <table id="locality_id" class="display">
