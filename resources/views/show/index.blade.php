@@ -4,32 +4,39 @@
 
 @section('content')
 
-<div class="row">
- <div class="col-md-12">
-  <br />
-  <table class="table table-bordered table-striped">
-   <tr>
-    <th>Show</th>
-    <th>Déscription</th>
-    <th>bookable</th>
-    <th>Représentations</th>
-    <th>Prix</th>
-    <th>Réserver</th>
-   </tr>
-   @foreach($shows as $row)
-   <tr>
-    <td>{{$row['title']}}</td>
-    <td>{{$row['description']}}</td>
-    <td>{{$row['bookable']}}</td>
-    <td>{{$row['representations']}}</td>
-    <td>{{$row['price']}}€</td>
-    <td><a href="{{action('ShowController@edit', $row['id'])}}" class="btn btn-warning">Réserver</a></td>
-    <td></td>
-   </tr>
-   @endforeach
-  </table>
- </div>
-</div>
+    <div class="container">
+         <h2>Filterable Table</h2>
+         <p>Type something in the input field to search and filter the table</p>
+         <input class="form-control" id="myInput" type="text" placeholder="Search..">
+         <br>
+      <table class="table table-bordered table-striped">
+          <h1>Liste des {{ $resource }}</h1>
+          <thead>
+          <tr>
+            <th>Show</th>
+            <th>Déscription</th>
+            <th>bookable</th>
+            <th>Représentations</th>
+            <th>Prix</th>
+            <th>Réserver</th>
+          </tr>
+          </thead>
+        <tbody id="show">
+       @foreach($shows as $row)
+       <tr>
+        <td>{{$row['title']}}</td>
+        <td>{{$row['description']}}</td>
+        <td>{{$row['bookable']}}</td>
+        <td>{{$row['representations']}}</td>
+        <td>{{$row['price']}}€</td>
+        <td><a href="{{action('ShowController@edit', $row['id'])}}" class="btn btn-warning">Réserver</a></td>
+        <td></td>
+       </tr>
+       @endforeach
+        </tbody>
+      </table>
+     </div>
+
 
 <!--
     <table id="show_id" class="display">

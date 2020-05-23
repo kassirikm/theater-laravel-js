@@ -8,7 +8,7 @@
         <p>Type something in the input field to search and filter the table</p>
         <input class="form-control" id="myInput" type="text" placeholder="Search..">
         <br>
-        <table id="locality_id" class="table table-striped">
+        <table class="table table-striped">
             <h1>Liste des {{ $resource }}</h1>
             <thead>
             <tr>
