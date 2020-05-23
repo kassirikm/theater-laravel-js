@@ -113,4 +113,12 @@ class ShowController extends Controller
     {
         //
     }
+    
+    /*
+     * Feed COntroller
+     */
+     public function feed(Request $request, Show $show)
+    {
+        return $show;
+    }
 }

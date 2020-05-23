@@ -38,6 +38,7 @@
 <!--
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     -->
+    @include('feed::links')
 </head>
 <body>
 

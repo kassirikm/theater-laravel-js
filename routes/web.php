@@ -59,3 +59,8 @@ Route::get('/program', 'PagesController@program');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('/shows/{feed}', 'ShowController@feed')
+    ->name('show.feed');
+
+Route::feeds();

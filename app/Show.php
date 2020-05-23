@@ -2,9 +2,14 @@
 
 namespace App;
 
+use Spatie\Feed\Feedable;
+use Spatie\Feed\FeedItem;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
-class Show extends Model
+
+
+class Show extends Model implements Feedable
 {
     /**
      * The attributes that are mass assignable.
@@ -26,7 +31,10 @@ class Show extends Model
      * @var bool
      */
     public $timestamps = true;
-
+    
+    /*
+     * Relations
+     */
     public function representations()
     {
         return $this->hasMany('App\Representation');
@@ -41,6 +49,34 @@ class Show extends Model
     public function locations()
     {
         return $this->belongsTo('App\Location');
+    }
+    
+    /*
+     * RSS feed
+     */
+    
+    public function toFeedItem()
+    {
+        /*
+         * Works but attributs are wrong
+         */
+        return FeedItem::create()
+            ->id($this->slug)
+            ->title($this->title)
+            ->summary($this->description)
+            ->updated($this->created_at)
+            ->link($this->link)
+            ->author($this->slug);
+    }
+    
+    public static function getFeedItems() 
+    {
+        return static::all();
+    }
+    
+    public function getLinkAttribute() 
+    {
+        return route('show.feed', $this);
     }
 
 }
