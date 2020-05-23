@@ -2,32 +2,34 @@
 
 @section('title', 'Liste des localités')
 
-<?php
-// Datatables function
-/*
-$(document).ready( function () {
-    //$('#show_id').DataTable();
-    $('#locality_id').DataTable();
-} );
-*/
-?>
-
 @section('content')
-    <table id="locality_id" class="display">
-        <h1>Liste des {{ $resource }}</h1>
-        <thead>
+    <div class="container">
+        <h2>Filterable Table</h2>
+        <p>Type something in the input field to search and filter the table</p>
+        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        <br>
+        <table id="locality_id" class="table table-striped">
+            <h1>Liste des {{ $resource }}</h1>
+            <thead>
             <tr>
                 <th>locality</th>
                 <th>postal code</th>
             </tr>
-        </thead>
-        <tbody>
-                @foreach($localities as $locality)
-                    <tr>
-                        <td>{{ $locality->locality}}</td>
-                        <td>{{ $locality->postal_code}}</td>
-                    </tr>
-                @endforeach
-        </tbody>
-    </table>
+            </thead>
+            <tbody id="locality">
+            @foreach($localities as $locality)
+                <tr>
+                    <td>{{ $locality->locality}}</td>
+                    <td>{{ $locality->postal_code}}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
 @endsection
+
+
+
+
+
+
