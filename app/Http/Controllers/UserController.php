@@ -15,23 +15,25 @@ class UserController extends Controller
 
     public function edit(User $user)
     {   
-        $user = Auth::user();
+        $user = Auth::user($user);
         return view('users.edit', compact('user'));
     }
 
-    public function update(User $user)
+    public function update(User $user, Request $request,$id)
     { 
-        $this->validate(request(), [
+        $data = $request->validate([
             'login' => 'required',
             'firstname' => 'required',
             'password' => 'required|min:6|confirmed'
         ]);
+        //Auth::whereId($user)->update($data);
 
-        $user->login = request('login');
-        $user->firstname = request('firstname');
-        $user->password = bcrypt(request('password'));
+        $user->login = request::input('login');
+        $user->firstname = request::input('firstname');
+        $user->password = bcrypt(request::input('password'));
 
         $user->save();
+        Flash::message('Your account has been updated!');
 
         return back();
     }

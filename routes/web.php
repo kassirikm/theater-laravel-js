@@ -19,8 +19,13 @@ Route::get('/testHome', function () {
     return view('testHome');
 });
 //route for user update
-Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
-Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
+
+Route::resource('users', 'UserController@edit');
+Route::get('users/{user}', function (App\User $user) {
+    return $user->id;
+});
+//Route::get('users/{user}',  ['as' => 'users.edit', 'uses' => 'UserController@edit']);
+//Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
 /*
 Route::get('hello', function() {
     return 'Hello World';
@@ -29,7 +34,6 @@ Route::get('hello', function() {
 Route::resource('artists', 'ArtistController');
 
 Route::resource('types', 'TypeController');
-
 
 // Route::resource('roles', 'RoleController');
 
