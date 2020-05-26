@@ -29,7 +29,7 @@
         <td>{{$row['bookable']}}</td>
         <td>{{$row['representations']}}</td>
         <td>{{$row['price']}}€</td>
-        <td><a href="{{action('ShowController@edit', $row['id'])}}" class="btn btn-warning">Réserver</a></td>
+        <td><a href="{{route('checkout.index')}}" class="btn btn-warning">Réserver</a></td>
         <td></td>
        </tr>
        @endforeach

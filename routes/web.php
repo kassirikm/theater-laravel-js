@@ -73,7 +73,13 @@ Route::get('/shows/{feed}', 'ShowController@feed')
 
 Route::feeds();
 
-// Route test pour paymentForm
+// Checkout routes
+Route::get('/paiement', 'CheckoutController@index')->name('checkout.index');
+
+/*
+ *  Route test pour paymentForm
+ * 
 Route::get('/paymentForm/index', function () {
     return view('/paymentForm/index');
 });
+*/
