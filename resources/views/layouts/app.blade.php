@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    @yield('extra-script')
 
     <!-- datatables library CSS with Bootstrap 4 -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.21/datatables.min.css"/>
@@ -124,6 +126,9 @@
         });
     });
 </script>
+
+<!--  -->
+@yield('extra-js')
 
 </body>
 </html>

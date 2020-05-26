@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
 use App\Show;
@@ -25,9 +26,12 @@ class CheckoutController extends Controller
           // 'metadata' => ['integration_check' => 'accept_a_payment'],
         ]);        
         
-        dd($intent);
+        // Récupérer secret du client
+        $clientSecret = Arr::get($intent, 'client_secret');
 
-        return view('checkout.index');
+    return view('checkout.index', [
+        'clientSecret' => $clientSecret,
+    ]);
     }
 
     /**
