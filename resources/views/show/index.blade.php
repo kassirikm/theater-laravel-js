@@ -29,7 +29,9 @@
         <td>{{$row['bookable']}}</td>
         <td>{{$row['representations']}}</td>
         <td>{{$row['price']}}€</td>
-        <td><a href="{{route('checkout.index')}}" class="btn btn-warning">Réserver</a></td>
+        <!-- {{ route('checkout.index') }} : aller vers la page de paiement -->
+        <!-- action('ShowController@edit', $row['id']) -->
+        <td><a href="{{ route('checkout.index') }}" class="btn btn-warning">Réserver</a></td>
         <td></td>
        </tr>
        @endforeach
