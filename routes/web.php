@@ -72,3 +72,8 @@ Route::get('/shows/{feed}', 'ShowController@feed')
     ->name('show.feed');
 
 Route::feeds();
+
+// Route test pour paymentForm
+Route::get('/paymentForm/index', function () {
+    return view('/paymentForm/index');
+});
