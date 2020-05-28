@@ -22,7 +22,7 @@ class CreateRepresentationsTable extends Migration
             $table->foreign('location_id')->references('id')->on('locations')
                     ->onDelete('restrict')->onUpdate('cascade');
             $table->foreign('show_id')->references('id')->on('shows')
-                    ->onDelete('restrict')->onUpdate('cascade');
+                    ->onDelete('cascade')->onUpdate('cascade');
 
         });
     }
