@@ -58,7 +58,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Navbar pages
 Route::get('/', 'PagesController@index');
 Route::get('/acceuil', 'PagesController@index');
-Route::get('/spectacles', 'ShowController@index');
+Route::get('/shows', 'ShowController@index');
 Route::get('/contact', 'PagesController@contact');
 
 
