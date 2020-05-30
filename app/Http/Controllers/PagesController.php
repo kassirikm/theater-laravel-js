@@ -10,15 +10,11 @@ class PagesController extends Controller
         return view('pages.index');
     }
     
-    public function about(){
-        return view('pages.about');
-    }
-    
     public function contact(){
         return view('pages.contact');
     }
     
-    public function program(){
-        return view('pages.program');
+    public function spectacles(){
+        return view('pages.spectacles');
     }
 }

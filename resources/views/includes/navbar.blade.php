@@ -4,10 +4,10 @@
 <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="program">Programme<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="acceuil">Acceuil<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="about">A propos<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="spectacles">Specatcles<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
             <a class="nav-link" href="contact">Contact<span class="sr-only">(current)</span></a>

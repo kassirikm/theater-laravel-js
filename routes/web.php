@@ -55,11 +55,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+// Navbar pages
 Route::get('/', 'PagesController@index');
-Route::get('/about', 'PagesController@about');
+Route::get('/acceuil', 'PagesController@index');
+Route::get('/spectacles', 'PagesController@spectacles');
 Route::get('/contact', 'PagesController@contact');
-Route::get('/program', 'PagesController@program');
 
 
 
