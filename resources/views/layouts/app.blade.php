@@ -97,11 +97,7 @@
             </div>
         </div>
     </nav>
-
-    <div class="jumbotron">
-        <h1>Jumbotron</h1>
-        <p class="lead">Lorem ipsum</p>
-    </div>
+    @include('includes.header')
 
     <main class="py-4">
         @yield('content')
