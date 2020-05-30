@@ -36,8 +36,13 @@
         <td>{{$show['price']}}€</td>
         <!-- {{ route('checkout.index') }} : aller vers la page de paiement -->
         <!-- action('ShowController@edit', $row['id']) -->
-        <td><a href="{{ route('checkout.index') }}" class="btn btn-warning">Réserver</a></td>
-        <td></td>
+        <td>
+            @if(Auth::check())
+                <a href="{{ route('checkout.index') }}" class="btn btn-warning">Réserver</a>
+            @else
+                <a onclick="alert('Veuillez vous connecter')" href="#" class="btn btn-warning">Réserver</a>
+            @endif
+        </td>
        </tr>
        @endforeach
         </tbody>

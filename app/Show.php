@@ -6,7 +6,8 @@ use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
-
+use App\ArtistType;
+use App\Artist;
 
 
 class Show extends Model implements Feedable
@@ -66,7 +67,7 @@ class Show extends Model implements Feedable
             ->summary($this->description)
             ->updated($this->created_at)
             ->link($this->link)
-            ->author($this->slug);
+            ->author(' ');
     }
     
     public static function getFeedItems() 
