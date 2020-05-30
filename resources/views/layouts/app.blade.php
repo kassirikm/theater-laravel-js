@@ -84,7 +84,7 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-                                <a class="dropdown-item" method="post" href="{{ route('users.edit',$user ?? '' ) }}">Edit Profile</a>
+                                <a class="dropdown-item" method="post" href="{{ route('users.edit',auth()->user()->id) }}">{{ trans('Edit user') }}</a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf

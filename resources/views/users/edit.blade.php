@@ -32,7 +32,7 @@
 
             <input type="password" name="password_confirmation" />
 
-            <button type="submit">Update profile</button>
+            <button type="submit"class="btn btn-primary">Update profile</button>
         </form>
     </div>
 </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 
@@ -19,22 +21,22 @@ class UserController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update(User $user, Request $request,$id)
+    public function update( Request $request, User $user)
     { 
-        $data = $request->validate([
+       $request->validate([
             'login' => 'required',
             'firstname' => 'required',
-            'password' => 'required|min:6|confirmed'
+            'password' =>'required|min:6|confirmed'
         ]);
-        //Auth::whereId($user)->update($data);
-
-        $user->login = request::input('login');
-        $user->firstname = request::input('firstname');
-        $user->password = bcrypt(request::input('password'));
-
+        $user->update($request->all());
+/*
+        $user->login = $request::input('login');
+        $user->firstname = $request::input('firstname');
+        $user->password = bcrypt($request::input('password'));
+        */
         $user->save();
-        Flash::message('Your account has been updated!');
+        //Session ::Flash('Your account has been updated!');
 
-        return back();
+        return redirect('/acceuil')->with('succes','Edition du profil réussi');
     }
 }
