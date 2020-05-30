@@ -1,5 +1,1 @@
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <img src="images/imagePrincipale.jpg">
-    </div>
-</div>
+<img src="images/imagePrincipale.jpg" class="rounded" style="margin:auto; display:block">
