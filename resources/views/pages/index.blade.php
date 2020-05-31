@@ -4,7 +4,10 @@
 
     <!-- Theater main image -->
     <br><br>
-    <div class="jumbotron jumbotron-fluid" style="background-image: url(http://d1wf8hd6ovssje.cloudfront.net/styles/960x263-banner/s3/images/National_Theatre_banner_3.jpg); background-size:100%;">
+    <div class="jumbotron jumbotron-fluid"
+         <!-- style="background-image: url(http://d1wf8hd6ovssje.cloudfront.net/styles/960x263-banner/s3/images/National_Theatre_banner_3.jpg); -->
+        style="background-image: url(National_Theatre_banner.jpg);
+         background-size:100%;">
         <div class="container">
             <h1 class="display-4" style="text-center; color:white;">Théatre National</h1>
             <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
@@ -18,6 +21,45 @@
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
     </p>
 
+    <div class="container">
+
+
+        <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+        <div class="row">
+            <div class="col-12 col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="images/claudebelgesaison220.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="images/ayiti.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="images/cible.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
     <div class="card-deck">
         <div class="card">
             <img src="..." class="card-img-top" alt="...">
@@ -44,6 +86,7 @@
             </div>
         </div>
     </div>
+    -->
 
 
 @endsection
