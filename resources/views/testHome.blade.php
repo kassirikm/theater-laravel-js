@@ -1,4 +1,6 @@
+
 <!DOCTYPE html>
+<!--
 <html lang="fr">
 
 <head>
@@ -16,16 +18,18 @@
 
     <!-- Custom styles for this template -->
     <link href="css/the-big-picture.css" rel="stylesheet">
-
+-->
 </head>
 
 <body>
+<!--
 @include('partials/header')
 
 <!-- Navigation -->
 
 
 <!-- Page Content -->
+<!--
 <section>
     <div class="container">
         <div class="row">
@@ -37,6 +41,7 @@
     </div>
 </section>
 @include('partials/footer')
+-->
 </body>
 
 </html>
