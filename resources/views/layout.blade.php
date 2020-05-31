@@ -1,11 +1,4 @@
 <!--
-/**
- * Created by PhpStorm.
- * User: McFly
- * Date: 3/23/2020
- * Time: 9:32 AM
- */
-
 /* Main template file
    All the other view files will extend this layout.blade.php file. */
 -->

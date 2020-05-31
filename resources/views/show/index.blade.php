@@ -3,7 +3,6 @@
 @section('title', 'Liste des spectacles')
 
 @section('content')
-
     <div class="container">
          <h2>Rechercher un spectacle</h2>
          <input class="form-control" id="myInput" type="text" placeholder="Search..">
