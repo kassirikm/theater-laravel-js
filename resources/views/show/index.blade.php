@@ -36,11 +36,18 @@
         <!-- {{ route('checkout.index') }} : aller vers la page de paiement -->
         <!-- action('ShowController@edit', $row['id']) -->
         <td>
-            @if(Auth::check())
-                <a href="{{ route('checkout.index') }}" class="btn btn-warning">Réserver</a>
-            @else
+           <!--  @if(Auth::check())
+               <a href="{{ route('checkout.index') }}" class="btn btn-warning">Réserver</a>-->
+            <form action="{{ route('cart.store') }}" method= "POST">
+                @csrf
+                <input type="hidden" name="id" value="{{$show->id}}">
+                <input type="hidden" name="title" value="{{$show->title}}">
+                <input type="hidden" name="price" value="{{$show->price}}">
+                <button type="submit" class="btn btn-warning"> Ajouter au panier</button>
+            </form>
+           <!--  @else
                 <a onclick="alert('Veuillez vous connecter')" href="#" class="btn btn-warning">Réserver</a>
-            @endif
+            @endif-->
         </td>
        </tr>
        @endforeach

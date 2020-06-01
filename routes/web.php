@@ -82,3 +82,6 @@ Route::get('/paymentForm/index', function () {
     return view('/paymentForm/index');
 });
 */
+
+/*Cart Routes*/
+Route::post('/panier/ajouter','CartController@store')->name('cart.store');
