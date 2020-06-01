@@ -25,6 +25,7 @@
           <div class="mb-1 text-muted">{{ $show->created_at->format('d/m/Y') }}</div>
           <p class="card-text mb-auto"></p>
           <p class="mb-auto"><strong>{{ $show->price }} €</strong></p>
+          <a href="{{ route('shows.show', $show->id) }}" class="stretched-link">Détails</a>
         </div>
           <div class="col-auto d-none d-lg-block"><img src="{{ asset('images/'.$show->poster_url) }}" width="200" height="250"></div>
       </div>

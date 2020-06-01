@@ -79,6 +79,8 @@ class ShowController extends Controller
             'collaborateurs' => $collaborateurs
         ]);
     }
+    
+  
 
     /**
      * Show the form for editing the specified resource.
