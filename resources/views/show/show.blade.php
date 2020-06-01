@@ -24,6 +24,9 @@
             @endif
             <p class="mb-auto"><strong>{{ $show->price }} €</strong></p>
             
+            <br>
+            <h1>Résumé</h1>
+            <p>{{ $show->description }}</p>
             <!-- Représentations -->
             <br>
             <h2>Liste des représentations</h2>
