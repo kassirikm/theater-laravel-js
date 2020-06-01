@@ -42,7 +42,15 @@
     -->
     @include('feed::links')
 </head>
+
+
+
 <body>
+@if (session('success'))
+<div class="alert alert-success">
+    {{ session ('success')}}
+</div>
+@endif
 
 <!-- <div id="app">-->
 
@@ -63,7 +71,6 @@
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
-
         $("#myInput").on("keyup", function() {
             var value = $(this).val().toLowerCase();
             $("#show tr").filter(function() {
@@ -75,6 +82,8 @@
 
 <!-- Check if the following line is necessary -->
 @yield('extra-js')
+
+@include('includes.footer')
 
 </body>
 </html>
