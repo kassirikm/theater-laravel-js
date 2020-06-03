@@ -23,33 +23,12 @@
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 
-    <script>
-        $(document).ready(function()
-        {
-            // "show" is the table id
-            $('#show').DataTable();
-        });
-    </script>
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-<!--
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    -->
-
-    <!-- Fonts -->
-    <!--
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    -->
-    <!-- Styles -->
-<!--
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    -->
+    <!-- Is the next line useful or can be deleted? -->
     @include('feed::links')
 </head>
 
@@ -70,17 +49,31 @@
         @yield('content')
     </main>
 
-<!-- </div> -->
+
+
+<!-- Check if the following line is necessary -->
+@yield('extra-js')
+
+<script>
+    $(document).ready(function()
+    {
+        // "show" is the table id
+        $('#show').DataTable();
+    });
+</script>
 
 <!-- jQuery BS4 Filter script -->
+
 <script>
     $(document).ready(function(){
+
         $("#myInput").on("keyup", function() {
             var value = $(this).val().toLowerCase();
             $("#locality tr").filter(function() {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
+        <!-- filter the table with show as an ID -->
         $("#myInput").on("keyup", function() {
             var value = $(this).val().toLowerCase();
             $("#show tr").filter(function() {
@@ -89,9 +82,6 @@
         });
     });
 </script>
-
-<!-- Check if the following line is necessary -->
-@yield('extra-js')
 
 @include('includes.footer')
 
