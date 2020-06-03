@@ -85,3 +85,8 @@ Route::get('/paymentForm/index', function () {
 
 /*Cart Routes*/
 Route::post('/panier/ajouter','CartController@store')->name('cart.store');
+Route::get('/videpanier',function(){
+    Cart::destroy();
+});
+
+Route::get('/panier','CartController@index')->name('cart.index');

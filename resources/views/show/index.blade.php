@@ -42,7 +42,7 @@
                 @csrf
                 <input type="hidden" name="id" value="{{$show->id}}">
                 <input type="hidden" name="title" value="{{$show->title}}">
-                <input type="hidden" name="price" value="{{$show->price}}">
+                <input type="hidden" name="price" value="{{$show->price}}">                
                 <button type="submit" class="btn btn-warning"> Ajouter au panier</button>
             </form>
            <!--  @else
