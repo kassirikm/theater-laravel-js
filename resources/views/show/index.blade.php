@@ -1,13 +1,16 @@
+
 @extends('layouts.app')
 
 @section('title', 'Liste des spectacles')
 
 @section('content')
+
+
     <div class="container">
          <h2>Rechercher un spectacle</h2>
          <input class="form-control" id="myInput" type="text" placeholder="Search..">
          <br>
-      <table class="table table-bordered table-striped">
+      <table id="show" class="table table-bordered table-striped">
           <h1>Liste des {{ $resource }}</h1>
           <thead>
           <tr>
@@ -18,7 +21,7 @@
             <th>Réserver</th>
           </tr>
           </thead>
-        <tbody id="show">
+        <tbody >
        @foreach($shows as $show)
        <tr>
         <td>{{$show->title}}</td>

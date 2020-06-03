@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Show;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use App\Show;
 
 class CartController extends Controller
 {
@@ -27,8 +28,8 @@ class CartController extends Controller
         $show =  Show::find($request->product_id);*/
        
 
-       Cart::add($request->id, $request->title,1, $request->price)
-       ->associate('App\Show');
+        Cart::add($request->id, $request->title,1, $request->price)
+                ->associate('App\Show');
 
         return back()->with('success','Le produit a bien été ajouté.');
 

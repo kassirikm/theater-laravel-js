@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Stripe\Stripe;
@@ -17,6 +18,13 @@ class CheckoutController extends Controller
      */
     public function index()
     {
+        /*
+         * Redirection si panier vide
+         */
+        if(Cart::count() <= 0)
+        {
+            return redirect()->route('shows.index');
+        }
         Stripe::setApiKey('sk_test_k5AZLcQoyWIyliBCQSX2PuTX00yWVEsfVt');
         
         $intent = PaymentIntent::create([
@@ -52,7 +60,11 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Cart::destroy();
+        
+        $data = $request->json()->all();
+        
+        return $data['paymentIntent'];
     }
 
     /**

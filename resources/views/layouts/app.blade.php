@@ -13,33 +13,22 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-    <!-- datatables library jQuery with Bootstrap 4 -->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.21/datatables.min.js"></script>
-    <!-- BS4 Filter script -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- CDN used by the Datatable library -->
+    <!-- CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css"></script>
+    <script src="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css"></script>
 
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-<!--
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    -->
-
-    <!-- Fonts -->
-    <!--
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    -->
-    <!-- Styles -->
-<!--
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    -->
+    <!-- Is the next line useful or can be deleted? -->
     @include('feed::links')
 </head>
 
@@ -60,17 +49,31 @@
         @yield('content')
     </main>
 
-<!-- </div> -->
+
+
+<!-- Check if the following line is necessary -->
+@yield('extra-js')
+
+<script>
+    $(document).ready(function()
+    {
+        // "show" is the table id
+        $('#show').DataTable();
+    });
+</script>
 
 <!-- jQuery BS4 Filter script -->
+
 <script>
     $(document).ready(function(){
+
         $("#myInput").on("keyup", function() {
             var value = $(this).val().toLowerCase();
             $("#locality tr").filter(function() {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
+        <!-- filter the table with show as an ID -->
         $("#myInput").on("keyup", function() {
             var value = $(this).val().toLowerCase();
             $("#show tr").filter(function() {
@@ -79,9 +82,6 @@
         });
     });
 </script>
-
-<!-- Check if the following line is necessary -->
-@yield('extra-js')
 
 @include('includes.footer')
 

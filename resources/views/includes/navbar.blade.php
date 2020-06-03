@@ -4,13 +4,13 @@
 <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="acceuil">Acceuil<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../acceuil">Acceuil<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="shows">Specatcles<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../shows">Specatcles<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-            <a class="nav-link" href="contact">Contact<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../contact">Contact<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
             <a class="nav-link" href="{{route('cart.index')}}">Panier<span class="badge badge-pill">{{ Cart::count() }}</span></a>
