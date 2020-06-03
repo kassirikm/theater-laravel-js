@@ -8,6 +8,13 @@
 
     <!-- datatables library CSS with Bootstrap 4 -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.21/datatables.min.css"/>
+    
+    <!-- datatables library jQuery with Bootstrap 4 -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.21/datatables.min.js"></script>
+    <!-- BS4 Filter script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
     <!-- Bootstrap 4 CSS -->
     <!-- Latest compiled and minified CSS -->
@@ -28,11 +35,9 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Is the next line useful or can be deleted? -->
+<!-- RSS -->
     @include('feed::links')
 </head>
-
-
 
 <body>
 @if (session('success'))
@@ -42,16 +47,12 @@
 @endif
 
 <!-- <div id="app">-->
-
     @include('includes.header')
 
     <main class="container">
         @yield('content')
     </main>
-
-
-
-<!-- Check if the following line is necessary -->
+<!-- JS paiement -->
 @yield('extra-js')
 
 <script>
@@ -82,8 +83,6 @@
         });
     });
 </script>
-
 @include('includes.footer')
-
 </body>
 </html>
