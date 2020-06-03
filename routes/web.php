@@ -32,15 +32,15 @@ Route::get('hello', function() {
     return 'Hello World';
 });
 
-Route::resource('artists', 'ArtistController');
+// Route::resource('artists', 'ArtistController');
 
-Route::resource('types', 'TypeController');
+// Route::resource('types', 'TypeController');
 
 // Route::resource('roles', 'RoleController');
 
-Route::resource('localities', 'LocalityController');
+// Route::resource('localities', 'LocalityController');
 
-Route::resource('locations', 'LocationController');
+// Route::resource('locations', 'LocationController');
 
 Route::resource('shows', 'ShowController');
 
@@ -74,6 +74,10 @@ Route::feeds();
 
 // Checkout routes
 Route::get('/paiement', 'CheckoutController@index')->name('checkout.index');
+Route::post('/paiement', 'CheckoutController@store')->name('checkout.store');
+Route::get('/merci', function(){
+    return view('checkout.thankyou');
+});
 
 /*
  *  Route test pour paymentForm
