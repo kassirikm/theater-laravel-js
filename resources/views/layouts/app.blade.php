@@ -47,6 +47,12 @@
 </div>
 @endif
 
+@if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
 <!-- <div id="app">-->
     @include('includes.header')
 

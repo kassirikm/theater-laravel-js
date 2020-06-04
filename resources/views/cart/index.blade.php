@@ -39,11 +39,11 @@
                       </div>
                     </div>
                   </th>
-                  <td class="border-0 align-middle"><strong>{{$show->model->price}}</strong></td> <!-- getPrice() -->
+                  <td class="border-0 align-middle"><strong>{{getPrice($show->subtotal())}}</strong></td>
                   <td class="border-0 align-middle">
-                      <select name="qty" id="qty" class="custom-select">
+                      <select name="qty" id="qty" data-id="{{ $show->rowId }}" class="custom-select">
                             @for($i=1; $i<11; $i++)
-                                <option value="{{ $i }}">{{ $i }}</option>
+                                <option value="{{ $i }}" {{ $show->qty == $i ? 'selected' : ''}}>{{ $i }}</option>
                             @endfor
                       </select>
                   </td>
@@ -91,7 +91,7 @@
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                 <h5 class="font-weight-bold">{{ getPrice(Cart::total()) }}</h5>
               </li>
-            </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Passer au paiement</a>
+            </ul><a href="{{ route('checkout.index') }}" class="btn btn-dark rounded-pill py-2 btn-block">Passer au paiement</a>
           </div>
         </div>
       </div>
@@ -104,4 +104,38 @@
     <p>Votre panier est vide</p>
 </div>
 @endif
+@endsection
+
+@section('extra-js')
+<script>
+    var qty = document.querySelectorAll('#qty');
+    Array.from(qty).forEach((element) => {
+        element.addEventListener('change', function () {
+            var rowId = element.getAttribute('data-id');
+            var token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            fetch(`/panier/${rowId}`,
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json, text-plain, */*",
+                        "X-Requested-With": "XMLHttpRequest",
+                        "X-CSRF-TOKEN": token
+                    },
+                    /*
+                     * Le nom des méthodes EN MAJUSCULES sa mère. J'ai passé 2h sur une erreur "Failed to fetch
+                     * tout simplement parce que les valeurs des attributs sont key sensitives
+                     */
+                    method: 'PATCH',
+                    body: JSON.stringify({
+                        qty: this.value
+                    })
+            }).then((data) => {
+                console.log(data);
+                location.reload();
+            }).catch((error) => {
+                console.log(error);
+            });
+        });
+    });
+</script>
 @endsection
