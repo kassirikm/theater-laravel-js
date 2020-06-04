@@ -15,16 +15,16 @@
               <thead>
                 <tr>
                   <th scope="col" class="border-0 bg-light">
-                    <div class="p-2 px-3 text-uppercase">Product</div>
+                    <div class="p-2 px-3 text-uppercase">Spectacle</div>
                   </th>
                   <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">Price</div>
+                    <div class="py-2 text-uppercase">Prix</div>
                   </th>
                   <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">Quantity</div>
+                    <div class="py-2 text-uppercase">Quantité</div>
                   </th>
                   <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">Remove</div>
+                    <div class="py-2 text-uppercase">Supprimer</div>
                   </th>
                 </tr>
               </thead>
@@ -40,7 +40,13 @@
                     </div>
                   </th>
                   <td class="border-0 align-middle"><strong>{{$show->model->price}}</strong></td> <!-- getPrice() -->
-                  <td class="border-0 align-middle"><strong>1</strong></td>
+                  <td class="border-0 align-middle">
+                      <select name="qty" id="qty" class="custom-select">
+                            @for($i=1; $i<11; $i++)
+                                <option value="{{ $i }}">{{ $i }}</option>
+                            @endfor
+                      </select>
+                  </td>
                   <td class="border-0 align-middle">
                       <form action="{{ route('cart.destroy', $show->rowId) }}" method="POST">
                           @csrf
