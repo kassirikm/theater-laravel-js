@@ -7,9 +7,11 @@
 
 
     <div class="container">
+        <!--
          <h2>Rechercher un spectacle</h2>
          <input class="form-control" id="myInput" type="text" placeholder="Search..">
          <br>
+         -->
       <table id="show" class="table table-bordered table-striped">
           <h1>Liste des {{ $resource }}</h1>
           <thead>
