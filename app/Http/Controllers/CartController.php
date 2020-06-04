@@ -25,7 +25,7 @@ class CartController extends Controller
         });
 
         if ($duplicata->isNotEmpty()) {
-            return redirect()->route('show.index')->with('success', 'Le spectacle a déjà été ajouté.');
+            return back()->with('success', 'Le spectacle a déjà été ajouté.');
         }
         
         $show =  Show::find($request->show_id);
