@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
 
@@ -29,7 +29,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach (Cart::content()as $show)
+                @foreach (Cart::content() as $show)
                 <tr>
                   <th scope="row" class="border-0">
                     <div class="p-2">
@@ -39,11 +39,17 @@
                       </div>
                     </div>
                   </th>
-                  <td class="border-0 align-middle"><strong>{{$show->model->price}}</strong></td>
-                  <td class="border-0 align-middle"><strong>3</strong></td>
-                  <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                  <td class="border-0 align-middle"><strong>{{$show->model->price}}</strong></td> <!-- getPrice() -->
+                  <td class="border-0 align-middle"><strong>1</strong></td>
+                  <td class="border-0 align-middle">
+                      <form action="{{ route('cart.destroy', $show->rowId) }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          <button type='submit' class="text-dark"><i class='fa fa-trash'></i>
+                      </form>
+                  </td>
                 </tr>
-                
+                @endforeach
               </tbody>
             </table>
           </div>
@@ -88,4 +94,9 @@
     </div>
   </div>
 </div>
+@else
+<div class="col-md-12">
+    <p>Votre panier est vide</p>
+</div>
+@endif
 @endsection

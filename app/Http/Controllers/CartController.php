@@ -24,14 +24,22 @@ class CartController extends Controller
  
         if ($duplicata->isNotEmpty()){
             return back()->with('success','Le produit a déjà été ajouté.');
-        }
-        $show =  Show::find($request->product_id);*/
-       
+        }*/
+        
+        
+        $show =  Show::find($request->show_id);
 
-        Cart::add($request->id, $request->title,1, $request->price)
+        Cart::add($show->id, $show->title,1, $show->price)
                 ->associate('App\Show');
 
         return back()->with('success','Le produit a bien été ajouté.');
 
+    }
+    
+    public function destroy($rowId)
+    {
+        Cart::remove($rowId);
+        
+        return back()->with('success', 'L\'article a bien été supprimé.');
     }
 }
