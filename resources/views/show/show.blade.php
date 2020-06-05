@@ -44,7 +44,14 @@
                         @foreach ($show->representations as $representation)
                             <tr>
                                 <td>{{ $representation->when }}</td>
-                                <td>{{ $representation->location->designation }}</td>
+                                <td>
+                                    @if($representation->location)
+                                        {{ $representation->location->designation }}
+                                    @elseif($representation->show->location)
+                                        {{ $representation->show->location->designation }}
+                                    @else
+                                        <em>à déterminer</em>
+                                    @endif</td>
                                 <td>
                                     <form action="{{ route('cart.store') }}" method= "POST">
                                         @csrf
@@ -53,7 +60,6 @@
                                     </form>
                                 </td>
                             </tr>
-
                         @endforeach
                     </tbody>
                 </table>
