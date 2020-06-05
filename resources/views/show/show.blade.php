@@ -30,14 +30,37 @@
             <!-- Représentations -->
             <br>
             <h2>Liste des représentations</h2>
-                
-                @if($show->representations->count()>=1)
-                    @foreach ($show->representations as $representation)
-                    <div class="alert alert-dark" role="alert">{{ $representation->when }}</div>
-                    @endforeach
-                @else
-                <div class="alert alert-dark" role="alert"><p>Aucune représentation</p></div>
-                @endif
+            <div class="container">
+                <table id="representations" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <td>Date</td>
+                            <td>Lieu</td>
+                            <td>Réserver</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @if($show->representations->count()>=1)
+                        @foreach ($show->representations as $representation)
+                            <tr>
+                                <td>{{ $representation->when }}</td>
+                                <td>{{ $representation->location->designation }}</td>
+                                <td>
+                                    <form action="{{ route('cart.store') }}" method= "POST">
+                                        @csrf
+                                        <input type="hidden" name="representation_id" value="{{$representation->id}}">            
+                                        <button type="submit" class="btn btn-warning"> Ajouter au panier</button>
+                                    </form>
+                                </td>
+                            </tr>
+
+                        @endforeach
+                    </tbody>
+                </table>
+                    @else
+                    <div class="alert alert-dark" role="alert"><p>Aucune représentation</p></div>
+                    @endif
+            </div>
             
             <!-- Artistes -->
             <h2>Distribution</h2>
