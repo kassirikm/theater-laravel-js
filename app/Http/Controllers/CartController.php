@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Show;
+use App\Representation;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -20,18 +21,25 @@ class CartController extends Controller
     
     public function store(Request $request)
     {        
-        $duplicata = Cart::search(function ($cartItem, $rowId) use ($request) {
+        /*$duplicata = Cart::search(function ($cartItem, $rowId) use ($request) {
             return $cartItem->id == $request->show_id;
         });
 
         if ($duplicata->isNotEmpty()) {
             return back()->with('success', 'Le spectacle a déjà été ajouté.');
-        }
+        }*/
+        //$show = Show::find($request->show_id);
+        $rep =  Representation::find($request->representation_id);
         
-        $show =  Show::find($request->show_id);
-
+        /*$show =  Show::find($request->show_id);*/
+        
+        Cart::add($rep->id, $rep->show->title,1, $rep->show->price)
+                ->associate('App\Representation');
+        /*
         Cart::add($show->id, $show->title,1, $show->price)
                 ->associate('App\Show');
+         * 
+         */
 
         return back()->with('success','Le produit a bien été ajouté.');
 

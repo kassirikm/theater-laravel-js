@@ -87,10 +87,12 @@ Route::get('/paymentForm/index', function () {
 });
 */
 
-/*Cart Routes*/
+/*Shows Cart Routes*/
 Route::get('/panier', 'CartController@index')->name('cart.index');
 Route::post('/panier/ajouter','CartController@store')->name('cart.store');
 Route::patch('/panier/{rowId}', 'CartController@update')->name('cart.update');
 Route::delete('/panier/{rowid}', "CartController@destroy")->name('cart.destroy');
 
 Route::get('/panier','CartController@index')->name('cart.index');
+
+/*Representations Cart Routes*/

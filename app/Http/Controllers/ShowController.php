@@ -3,15 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-/* Import the Show model */
 use App\Show;
 
 
-/*
-
- Command: php artisan make:controller ShowController --resource
- The " -- resource " extension add by default 6 methods inside the controller.
- */
 class ShowController extends Controller
 {
     /**
@@ -65,6 +59,7 @@ class ShowController extends Controller
      */
     public function show($id)
     {
+        
         $show = Show::find($id);
         
         // Récupérer les artistes du spectacle et les grouper par type
