@@ -8,6 +8,7 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 
 class CartController extends Controller
@@ -28,18 +29,17 @@ class CartController extends Controller
         if ($duplicata->isNotEmpty()) {
             return back()->with('success', 'Le spectacle a déjà été ajouté.');
         }*/
-        //$show = Show::find($request->show_id);
         $rep =  Representation::find($request->representation_id);
         
-        /*$show =  Show::find($request->show_id);*/
+        // $show =  Show::find($request->show_id);
         
-        Cart::add($rep->id, $rep->show->title,1, $rep->show->price)
-                ->associate('App\Representation');
-        /*
-        Cart::add($show->id, $show->title,1, $show->price)
-                ->associate('App\Show');
-         * 
-         */
+        /*Cart::add($rep->id, $rep->show->title,1, $rep->show->price)
+                ->associate('App\Representation');*/
+        
+        /*Cart::add($show->id, $show->title,1, $show->price)
+                ->associate('App\Show');*/
+        Cart::add(['id' => $rep->show->id, 'name' => $rep->show->title, 'qty' => 1, 'price' => $rep->show->price, 'options' => ['date' => $rep->when]]);
+        
 
         return back()->with('success','Le produit a bien été ajouté.');
 
