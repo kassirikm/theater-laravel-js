@@ -20,7 +20,7 @@
             <th>Description</th>
             <th>Représentations</th>
             <th>Prix</th>
-            <th>Réserver</th>
+            <!--<th>Réserver</th>-->
           </tr>
           </thead>
         <tbody >
@@ -40,18 +40,18 @@
         <td>{{$show['price']}}€</td>
         <!-- {{ route('checkout.index') }} : aller vers la page de paiement -->
         <!-- action('ShowController@edit', $row['id']) -->
-        <td>
-           <!--  @if(Auth::check())
-               <a href="{{ route('checkout.index') }}" class="btn btn-warning">Réserver</a>-->
+        <!--<td>
+           @if(Auth::check())
+               <a href="{{ route('checkout.index') }}" class="btn btn-warning">Réserver</a>
             <form action="{{ route('cart.store') }}" method= "POST">
                 @csrf
                 <input type="hidden" name="show_id" value="{{$show->id}}">            
                 <button type="submit" class="btn btn-warning"> Ajouter au panier</button>
             </form>
-           <!--  @else
+             @else
                 <a onclick="alert('Veuillez vous connecter')" href="#" class="btn btn-warning">Réserver</a>
-            @endif-->
-        </td>
+            @endif
+        </td>-->
        </tr>
        @endforeach
         </tbody>
