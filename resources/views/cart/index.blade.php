@@ -21,7 +21,7 @@
                     <div class="py-2 text-uppercase">Prix</div>
                   </th>
                   <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">Quantité</div>
+                    <div class="py-2 text-uppercase">Places</div>
                   </th>
                   <th scope="col" class="border-0 bg-light">
                     <div class="py-2 text-uppercase">Supprimer</div>
