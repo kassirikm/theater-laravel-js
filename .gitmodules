@@ -1,3 +1,3 @@
 [submodule "theater-laravel-js"]
 	path = theater-laravel-js
-	url = https://github.com/Ali-consciousroad/theater-laravel-js.git
+	url = git://github.com/Ali-consciousroad/theater-laravel-js.git
