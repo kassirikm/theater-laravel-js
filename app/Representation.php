@@ -24,7 +24,7 @@ class Representation extends Model
 
     public function show()
     {
-        return $this->belongsTo('App\Show', );
+        return $this->belongsTo('App\Show');
     }
 
     public function users()
