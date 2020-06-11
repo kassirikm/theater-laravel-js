@@ -91,7 +91,14 @@
               <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                 <h5 class="font-weight-bold">{{ getPrice(Cart::total()) }}</h5>
               </li>
-            </ul><a href="{{ route('checkout.index') }}" class="btn btn-dark rounded-pill py-2 btn-block">Passer au paiement</a>
+            </ul>
+            @guest
+                  @if (Route::has('register'))
+                  <a href="{{ route('register') }}" class="btn btn-dark rounded-pill py-2 btn-block">Register avant de régler</a>
+                  @endif
+                @else  
+            <a href="{{ route('checkout.index') }}" class="btn btn-dark rounded-pill py-2 btn-block">Passer au paiement</a>
+            @endguest
           </div>
         </div>
       </div>
