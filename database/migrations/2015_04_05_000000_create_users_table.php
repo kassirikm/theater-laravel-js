@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
 
         });
 
+        /*
          Schema::table('users', function (Blueprint $table) {
             $table->UnsignedBigInteger('role_id')->nullable();
             $table->foreign('role_id')
@@ -35,6 +36,7 @@ class CreateUsersTable extends Migration
                 ->onDelete('set null')
                 ->onUpdate('cascade');
         });
+        */
         
         // API Authentication
         Schema::table('users', function ($table) {
