@@ -14,14 +14,16 @@ class CreateCategoriesTable extends Migration
     {
         // Create table for storing categories
         Schema::create('categories', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
+            $table->timestamps();
+            /*
             $table->integer('parent_id')->unsigned()->nullable()->default(null);
             $table->foreign('parent_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('set null');
             $table->integer('order')->default(1);
+            */
             // Add a max length to the name attribute of the category table
             $table->string('name', 10);
-            $table->string('slug')->unique();
-            $table->timestamps();
+            /*$table->string('slug')->unique();*/
         });
     }
 
