@@ -51,7 +51,12 @@ class Show extends Model implements Feedable
     {
         return $this->belongsTo('App\Location');
     }
-    
+
+    public function categories()
+    {
+        return $this->belongsToMany('App\Show');
+    }
+
     /*
      * RSS feed
      */
