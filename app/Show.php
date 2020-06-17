@@ -54,7 +54,7 @@ class Show extends Model implements Feedable
 
     public function categories()
     {
-        return $this->belongsToMany('App\Show');
+        return $this->belongsTo('App\Show');
     }
 
     /*

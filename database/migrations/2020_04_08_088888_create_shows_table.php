@@ -16,6 +16,7 @@ class CreateShowsTable extends Migration
         Schema::create('shows', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->UnsignedBigInteger('location_id')->nullable();
+            $table->UnsignedBigInteger('category_id')->nullable();
             $table->string('slug', 60)->unique();
             $table->string('title', 255);
             $table->text('description')->nullable();
@@ -25,9 +26,11 @@ class CreateShowsTable extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
             
-            $table->foreign('location_id')->references('id')->on('locations')
-                    ->onDelete('restrict')->onUpdate('cascade');
- 
+            $table->foreign('location_id')
+                ->references('id')
+                ->on('locations')
+                ->onDelete('restrict')
+                ->onUpdate('cascade');
         });
      
     }
