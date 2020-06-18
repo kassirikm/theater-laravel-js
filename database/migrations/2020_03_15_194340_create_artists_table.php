@@ -25,6 +25,11 @@ class CreateArtistsTable extends Migration
             $table->timestamps();
             $table->string('firstname', 60);
             $table->string('lastname', 60);
+            // Add a foreign key from the agencies table
+            $table->UnsignedBigInteger('agency_id');
+            $table->foreign('agency_id')
+                ->references('id')->on('agencies')
+                ->onDelete('cascade');
         });
     }
 

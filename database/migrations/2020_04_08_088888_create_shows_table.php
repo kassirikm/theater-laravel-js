@@ -25,7 +25,8 @@ class CreateShowsTable extends Migration
             $table->decimal('price', 10, 2)->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
-            
+
+            // Add the foreign key from the locations table
             $table->foreign('location_id')
                 ->references('id')
                 ->on('locations')
