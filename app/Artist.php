@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artist extends Model
 {
-    protected $fillable = ['firstname', 'lastname'];
+    protected $fillable = ['firstname', 'lastname', 'agency_id'];
     // One to Many inverse relationship
     public function types()
     {
