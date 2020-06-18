@@ -3,31 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Show;
 
-
-class ShowController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
-        /*
-        $shows = Show::all();
-        return view('show/index', compact('shows'));
-        */
-
-        $shows = Show::all();
-
-        return view('show.index',[
-            'shows' => $shows,
-            'resource' => 'spectacles',
-        ]);
-
+        //
     }
 
     /**
@@ -37,7 +23,7 @@ class ShowController extends Controller
      */
     public function create()
     {
-        return view('show/create');
+        //
     }
 
     /**
@@ -59,29 +45,8 @@ class ShowController extends Controller
      */
     public function show($id)
     {
-        
-        $show = Show::find($id);
-        
-        // Récupérer les artistes du spectacle et les grouper par type
-        $collaborateurs = [];
-        
-        foreach($show->artistTypes as $at) {
-            $collaborateurs[$at->type->type][] = $at->artist;
-        }
-
-        return view('show.show',[
-            'show' => $show,
-            'collaborateurs' => $collaborateurs
-        ]);
-
-        $Comment = Comment::find($id);
-
-        return view('comment.show', [
-            'comment' => $comment,
-        ]);
+        //
     }
-    
-  
 
     /**
      * Show the form for editing the specified resource.
@@ -93,6 +58,7 @@ class ShowController extends Controller
     {
         //
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -100,7 +66,6 @@ class ShowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
     public function update(Request $request, $id)
     {
         //
@@ -115,13 +80,5 @@ class ShowController extends Controller
     public function destroy($id)
     {
         //
-    }
-    
-    /*
-     * Feed COntroller
-     */
-     public function feed(Request $request, Show $show)
-    {
-        return $show;
     }
 }
