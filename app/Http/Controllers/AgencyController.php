@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Agency
+use App\Agency;
 
 class AgencyController extends Controller
 {

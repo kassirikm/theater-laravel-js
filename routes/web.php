@@ -33,15 +33,15 @@ Route::get('hello', function() {
 });
 
 
- Route::resource('artists', 'ArtistController');
+Route::resource('artists', 'ArtistController');
 
 // Route::resource('types', 'TypeController');
 
 // Route::resource('roles', 'RoleController');
 
- Route::resource('localities', 'LocalityController');
+Route::resource('localities', 'LocalityController');
 
- Route::resource('locations', 'LocationController');
+Route::resource('locations', 'LocationController');
 
 // Create a route to display the agencies with the artists
 Route::get('agencies', 'AgencyController@index');
