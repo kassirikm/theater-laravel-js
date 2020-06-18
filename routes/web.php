@@ -45,7 +45,7 @@ Route::resource('locations', 'LocationController');
 
 // Create a route to display the agencies with the artists
 Route::get('agencies', 'AgencyController@index');
-//Route::get('agencies/{id}', 'AgencyController@show');
+Route::get('agencies/{id}', 'AgencyController@show');
 
 Route::resource('shows', 'ShowController');
 

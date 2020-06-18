@@ -14,6 +14,7 @@ class AgencyController extends Controller
      */
     public function index()
     {
+
         $agencies = Agency::all();
 
         return view('agency/index',compact('agencies'));
@@ -48,7 +49,12 @@ class AgencyController extends Controller
      */
     public function show($id)
     {
-        //
+        $agency = Agency::find($id);
+
+        return view('agency.show',[
+            'agency' => $agency,
+        ]);
+
     }
 
     /**
