@@ -70,6 +70,5 @@ class LocationsTableSeeder extends Seeder
                 'phone' => $data['phone'],
             ]);
         }
-
     }
 }

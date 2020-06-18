@@ -15,6 +15,6 @@ class Artist extends Model
     // One to Many inverse relationship
     public function agencies()
     {
-        return $this->belongsToMany('App\Agency');
+        return $this->belongsTo('App\Agency', 'agency_id');
     }
 }
